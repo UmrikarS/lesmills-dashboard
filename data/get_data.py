@@ -34,9 +34,6 @@ print("✅ Libraries imported successfully!")
 # ============================================================================
 
 """
-IMPORTANT: Get your YouTube API key from:
-https://console.cloud.google.com/apis/credentials
-
 Steps:
 1. Create a new project
 2. Enable YouTube Data API v3
@@ -44,23 +41,13 @@ Steps:
 4. Copy the key below
 """
 
-# # For Kaggle, add your API key as a secret:
-# # Go to Add-ons → Secrets → New Secret
-# # Name: YOUTUBE_API_KEY
-# # Then uncomment the line below:
-#
-# # from kaggle_secrets import UserSecretsClient
-# # API_KEY = UserSecretsClient().get_secret("YOUTUBE_API_KEY")
-API_KEY = "AIzaSyAIZBe9qGk2TFyGHmrzEBE__Uv2OHvIW2s"
-# # For local testing:
-# API_KEY = "AIzaSyAIZBe9qGk2TFyGHmrzEBE__Uv2OHvIW2s"  # Replace with your key
-#
-# Les Mills Channel ID
-LES_MILLS_CHANNEL_ID = "UChJHUmT_EREEs4WV6jpmnBw"
+API_KEY = os.environ.get("YOUTUBE_API_KEY")
 
-# Nina's favorite video ID (extracted from URL)
-#NINA_VIDEO_ID = "k1QJF-nCRWc"  # WORK OUT #LIKENINA | 30-minute LES MILLS GRIT Cardio
-NINA_VIDEO_ID = "ZMO_XC9w7Lw"
+# Les Mills Channel ID
+LES_MILLS_CHANNEL_ID =  os.environ.get("LES_MILLS_CHANNEL_ID")
+
+# Nina's favorite video ID
+NINA_VIDEO_ID = os.environ.get("NINA_VIDEO_ID")
 print(f"🎯 Target Channel: Les Mills International")
 print(f"⭐ Reference Video: Nina's GRIT Cardio Workout")
 
