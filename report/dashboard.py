@@ -32,7 +32,7 @@ def load_data():
     """
     # This is sample data - replace with your actual data
     try:
-        df = pd.read_csv('C:\\Users\\sneha\\PycharmProjects\\less_mills_youtube_analytics\\data\\les_mills_videos.csv')
+        df = pd.read_csv('report/les_mills_videos.csv')
         df['published_at'] = pd.to_datetime(df['published_at'])
     except:
         # Generate sample data if CSV not found
@@ -548,4 +548,4 @@ if __name__ == '__main__':
     # Expose server for deployment
     server = app.server
 
-    app.run(debug=False, host='0.0.0.0', port=8050)
+    app.run(debug=True, host='0.0.0.0', port=8050)
