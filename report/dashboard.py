@@ -533,8 +533,7 @@ def update_dashboard(selected_workout):
 # RUN APP
 # ============================================================================
 
-# Expose server for deployment
-server = app.server
+
 
 if __name__ == '__main__':
     print("\n" + "=" * 70)
@@ -546,4 +545,7 @@ if __name__ == '__main__':
 
     #app.run(debug=True, host='0.0.0.0', port=8050)
 
-    app.run_server(debug=False, host='0.0.0.0', port=8050)
+    # Expose server for deployment
+    server = app.server
+
+    app.run(debug=False, host='0.0.0.0', port=8050)
