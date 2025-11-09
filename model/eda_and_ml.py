@@ -40,7 +40,7 @@ print("✅ All libraries imported successfully!")
 # ============================================================================
 
 # Load the data we collected in Part 1
-df = pd.read_csv('C:\\Users\\sneha\\PycharmProjects\\less_mills_youtube_analytics\\data\\les_mills_videos.csv')
+df = pd.read_csv('../data/les_mills_videos.csv')
 df['published_at'] = pd.to_datetime(df['published_at'])
 df['publish_date'] = pd.to_datetime(df['publish_date'])
 

@@ -22,6 +22,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
 import plotly.graph_objects as go
+# from dotenv import load_dotenv
+#
+# load_dotenv() # This loads the variables from the .env file
 
 # Set style
 sns.set_style("whitegrid")
@@ -40,19 +43,14 @@ Steps:
 3. Create credentials (API key)
 4. Copy the key below
 """
-
-API_KEY = os.environ.get("YOUTUBE_API_KEY")
-
+API_KEY = os.getenv('YOUTUBE_API_KEY')
 # Les Mills Channel ID
 LES_MILLS_CHANNEL_ID =  os.environ.get("LES_MILLS_CHANNEL_ID")
-
 # Nina's favorite video ID
 NINA_VIDEO_ID = os.environ.get("NINA_VIDEO_ID")
+
 print(f"🎯 Target Channel: Les Mills International")
 print(f"⭐ Reference Video: Nina's GRIT Cardio Workout")
-
-
-
 
 # ============================================================================
 # DATA COLLECTION FUNCTIONS
@@ -339,7 +337,7 @@ print(f"Total likes: {df_videos['like_count'].sum():,}")
 print(f"Total comments: {df_videos['comment_count'].sum():,}")
 
 # Save to CSV
-df_videos.to_csv('les_mills_videos.csv', index=False)
+df_videos.to_csv('./les_mills_videos.csv', index=False)
 print(f"\n💾 Data saved to 'les_mills_videos.csv'")
 
 print("\n" + "=" * 70)
