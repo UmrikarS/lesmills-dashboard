@@ -32,7 +32,7 @@ def load_data():
     """
     # This is sample data - replace with your actual data
     try:
-        df = pd.read_csv('../data/les_mills_videos.csv')
+        df = pd.read_csv('les_mills_videos.csv')
         df['published_at'] = pd.to_datetime(df['published_at'])
     except:
         # Generate sample data if CSV not found
