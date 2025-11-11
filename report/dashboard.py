@@ -173,7 +173,7 @@ app.layout = html.Div([
                 html.H3("📹", style={'fontSize': '36px', 'margin': '0'}),
                 html.H2(id='metric-videos',
                         style={'color': colors['text'], 'fontSize': '32px', 'fontWeight': 'bold', 'margin': '10px 0'}),
-                html.P("Total Videos", style={'color': '#94a3b8', 'fontSize': '14px', 'margin': '0'}),
+                html.P("Total Videos", style={'color': '#94a3b8', 'fontSize': '14px', 'fontWeight': 'bold', 'margin': '0'}),
             ], style={**metric_card_style, 'background': 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)'})
         ], style={'width': '24%'}),
 
@@ -182,7 +182,7 @@ app.layout = html.Div([
                 html.H3("📈", style={'fontSize': '36px', 'margin': '0'}),
                 html.H2(id='metric-total-views',
                         style={'color': colors['text'], 'fontSize': '32px', 'fontWeight': 'bold', 'margin': '10px 0'}),
-                html.P("Total Views", style={'color': '#94a3b8', 'fontSize': '14px', 'margin': '0'}),
+                html.P("Total Views", style={'color': '#94a3b8', 'fontSize': '14px', 'fontWeight': 'bold', 'margin': '0'}),
             ], style={**metric_card_style, 'background': 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)'})
         ], style={'width': '24%'}),
 
@@ -191,7 +191,7 @@ app.layout = html.Div([
                 html.H3("👍", style={'fontSize': '36px', 'margin': '0'}),
                 html.H2(id='metric-avg-views',
                         style={'color': colors['text'], 'fontSize': '32px', 'fontWeight': 'bold', 'margin': '10px 0'}),
-                html.P("Avg Views", style={'color': '#94a3b8', 'fontSize': '14px', 'margin': '0'}),
+                html.P("Avg Views", style={'color': '#94a3b8', 'fontSize': '14px', 'fontWeight': 'bold', 'margin': '0'}),
             ], style={**metric_card_style, 'background': 'linear-gradient(135deg, #eab308 0%, #ca8a04 100%)'})
         ], style={'width': '24%'}),
 
@@ -200,7 +200,7 @@ app.layout = html.Div([
                 html.H3("⚡", style={'fontSize': '36px', 'margin': '0'}),
                 html.H2(id='metric-engagement',
                         style={'color': colors['text'], 'fontSize': '32px', 'fontWeight': 'bold', 'margin': '10px 0'}),
-                html.P("Avg Engagement", style={'color': '#94a3b8', 'fontSize': '14px', 'margin': '0'}),
+                html.P("Avg Engagement", style={'color': '#94a3b8', 'fontSize': '14px', 'fontWeight': 'bold', 'margin': '0'}),
             ], style={**metric_card_style, 'background': 'linear-gradient(135deg, #10b981 0%, #059669 100%)'})
         ], style={'width': '24%'}),
     ], style={'display': 'flex', 'justifyContent': 'space-between', 'marginBottom': '30px', 'gap': '15px'}),
@@ -327,7 +327,7 @@ def update_dashboard(selected_workout):
         nina_rank = (df['view_count'] > nina_video['view_count']).sum() + 1
         nina_rank_display = f"#{nina_rank}"
         nina_engagement_display = f"{nina_video['engagement_rate']:.2f}%"
-        nina_duration_display = f"{nina_video['duration_minutes']} min"
+        nina_duration_display = f"{nina_video['duration_minutes']:.2f} min"
         nina_vs_avg = ((nina_video['view_count'] / avg_views - 1) * 100)
         nina_vs_avg_display = f"{nina_vs_avg:+.0f}%"
     else:
